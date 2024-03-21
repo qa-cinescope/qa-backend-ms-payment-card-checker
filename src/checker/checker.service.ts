@@ -2,7 +2,7 @@ import { Injectable } from "@nestjs/common";
 import { CardCheckerDto } from "./dto";
 import { ConfigService } from "@nestjs/config";
 import { CheckerResponse } from "./responses";
-import { Status } from "@repo/database";
+import { Status } from "./types";
 
 @Injectable()
 export class CheckerService {
