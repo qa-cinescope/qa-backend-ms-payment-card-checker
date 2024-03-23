@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-ms-payment-card-checker
+  namespace: dev
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: backend-ms-payment-card-checker
+  template:
+    metadata:
+      labels:
+        app: backend-ms-payment-card-checker
+        version: "1.00"
+    spec:
+      containers:
+        - name: backend-ms-payment-card-checker
+          image: zebolhd/qa-backend-ms-payment-card-checker:latest
+          imagePullPolicy: Always
+          envFrom:
+            - configMapRef:
+                name: qa-secret
