@@ -15,6 +15,8 @@ async function bootstrap() {
         brokers: [configService.get<string>("KAFKA_BROKER", "localhost:9092")],
       },
       consumer: {
+        heartbeatInterval: 5000,
+        rebalanceTimeout: 5000,
         groupId: "checker-consumer",
       },
     },
