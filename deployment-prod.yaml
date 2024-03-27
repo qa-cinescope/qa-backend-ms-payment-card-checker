@@ -24,3 +24,5 @@ spec:
           envFrom:
             - configMapRef:
                 name: qa-config
+            - secretRef:
+                name: qa-secre
