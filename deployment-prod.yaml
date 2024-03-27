@@ -25,4 +25,4 @@ spec:
             - configMapRef:
                 name: qa-config
             - secretRef:
-                name: qa-secre
+                name: qa-secret
