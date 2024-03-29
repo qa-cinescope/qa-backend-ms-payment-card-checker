@@ -20,6 +20,13 @@ spec:
       containers:
         - name: backend-ms-payment-card-checker
           image: zebolhd/qa-backend-ms-payment-card-checker:latest
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "150m"
+            limits:
+              memory: "150Mi"
+              cpu: "350m"
           imagePullPolicy: Always
           envFrom:
             - configMapRef:
